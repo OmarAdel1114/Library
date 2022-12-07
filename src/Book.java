@@ -1,5 +1,5 @@
 public class Book {
-    private String bookName;
+    private String bookName = "Omar";
     private String author;
     private int bookID;
     private int quantity;
