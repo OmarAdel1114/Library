@@ -3,6 +3,7 @@ public class Librarian {
     private int librarianID;
     private String password;
 
+   public Librarian(){}
     public Librarian (String librarianName, int librarianID, String password) {
         this.librarianName = librarianName;
         this.librarianID = librarianID;
