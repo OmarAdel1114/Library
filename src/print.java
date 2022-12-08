@@ -1,6 +1,6 @@
 import java.sql.*;
 public class print {
-   Connection con ;
+  /* Connection con ;
     public void showallusers() {
 
         try {
@@ -27,4 +27,4 @@ public class print {
         } catch (Exception ex) {
             ex.printStackTrace();
 }
-}}
+}*/}
