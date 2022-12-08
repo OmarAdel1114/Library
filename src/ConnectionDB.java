@@ -8,12 +8,15 @@ public class ConnectionDB {
         public static Connection createconnection()  {
 
             try {
-
-                Class.forName("com.mysql.jdbc.Driver");
-                String url="jdbc:mysql://127.0.0.1:3306/library_system";
+                String user ="root";
+                String password = "OMARdola160";
+                String add ="jdbc:mysql://127.0.0.1:3306/library_system";
+                con = DriverManager.getConnection(add, user, password);
+               /* Class.forName("com.mysql.jdbc.Driver");
+                String url="jdbc:mysql://127.0.0.1:3306/library_system?useSSL=false";
                   String username="root";
                 String password="OMARdola160";
-                con = DriverManager.getConnection(url, username, password);
+                con = DriverManager.getConnection(url, username, password);*/
 
             }
             catch (Exception ex){

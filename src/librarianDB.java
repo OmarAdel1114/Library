@@ -1,5 +1,7 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class librarianDB implements userINT{
    /* @Override
@@ -45,12 +47,41 @@ public class librarianDB implements userINT{
     }
 
     @Override
-    public void deleteuser(int ID) {
-
+    public void deleteuser(String name) {
+        con = ConnectionDB.createconnection();
+        String query = "delete from user where user_Fname=?";
+        try {
+            PreparedStatement pstm = con.prepareStatement(query);
+           pstm.setString(1,name);
+            int count = pstm.executeUpdate();
+            if (count!=0)
+                System.out.println("User Deleted." +name );
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     @Override
-    public void showAllusesrnames(String name) {
+    public void showAllusesrnames() {
+        con = ConnectionDB.createconnection();
+        String query = "select * from user";
+        System.out.println("User Details");
+        System.out.println("-------------------------------------------------------");
+        System.out.format("%s\t%s\t%s\t%s\n","ID","Firstname","Lastname","Password");
+        System.out.println("-------------------------------------------------------");
+        try {
+           Statement stmt = con.createStatement();
+           ResultSet result = stmt.executeQuery(query);
+           while(result.next()){
+           System.out.format("%d\t%s\t%s\t%s\n",
+                   result.getInt(1),
+                   result.getString(2),
+                   result.getString(3),
+                   result.getString(4));}
+            System.out.println("-------------------------------------------------------");
+       }catch (Exception ex){
+            ex.printStackTrace();
+       }
 
     }
 

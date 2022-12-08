@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
+        int id  ;
+        String name;
         userINT userInterface = new librarianDB() ;
 
         System.out.println("Library Management System");
@@ -11,14 +12,16 @@ public class Main {
 
     do {
         System.out.println("1- add user\n"+
-        "2-delet user\n "+ "3-show all users\n");
+        "2-show all users\n "+ "3-delet user\n");
         System.out.println("Enter Choice please :");
         int ch = sc.nextInt();
+
         switch (ch){
+
             case 1:
-               User us = new User();
+                User us = new User();
                 System.out.println("Enter ID: ");
-                int id = sc.nextInt();
+                 id = sc.nextInt();
                 System.out.println("Enter user Fname: ");
                 String fname = sc.next();
                 System.out.println("Enter user Lname: ");
@@ -32,11 +35,18 @@ public class Main {
                 userInterface.creatuser(us);
            break;
             case 2:
+            userInterface.showAllusesrnames();
+                break;
+            case 3:
+                System.out.println("Enter the to delete ");
+                name =sc.next();
+                userInterface.deleteuser(name);
+                break;
+                case 4:
                 System.exit(0);
             default:
                 System.out.println("Enter valid choice ");
                 break;
-
         }
    }while (true);
 
