@@ -7,6 +7,9 @@ public class Book {
     private String book_edition;
     private String book_publisher;
 
+    public Book() {
+    }
+
     public Book (String book_name, String book_author, int bookID, int book_quant, double book_price,
                  String book_edition, String book_publisher)
     {
