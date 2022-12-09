@@ -1,4 +1,9 @@
-public class userDB implements requestInt {
+public class userDB  {
+
+  /*  @Override
+    public void verifyInfo() {
+
+    }
 
     @Override
     public void buy() {
@@ -10,5 +15,5 @@ public class userDB implements requestInt {
     @Override
     public void cancelOreder(int ID) {
     // delete request which requestID = ?
-    }
+    }*/
 }
