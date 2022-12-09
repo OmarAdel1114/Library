@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class librarianDB implements userINT,BookINT,requestInt{
+public class librarianDB implements userINT,BookINT{
     Connection con;
     @Override
     public void creatuser(User us) {
@@ -58,10 +58,7 @@ public class librarianDB implements userINT,BookINT,requestInt{
        }
 
     }
-    public boolean checkavailability(){
 
-        return true;
-    };
 
     @Override
     public void creatbook(Book b1) {
@@ -130,54 +127,10 @@ public class librarianDB implements userINT,BookINT,requestInt{
         }
     }
 
-    @Override
-    public void verifyInfo(int userID , String user_pass) {
-     /*   try {
-            con = ConnectionDB.createconnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }*/
-        // delete from user where id=?
-        //int id=admin.getId();
-        //String pass=admin.getPass();
-        //     String
-        String query="select * from user where userID=? and user_pass=?";
-
-        try {
-            con = ConnectionDB.createconnection();
-            //   Statement stmt = con.createStatement();
-            //  ResultSet resultSet = stmt.executeQuery(query);
-            PreparedStatement pstm = con.prepareStatement(query);
-            pstm.setInt(1, userID);
-            pstm.setString(2, user_pass);
-            //    int cnt=pstm.executeUpdate();
-
-            ResultSet rs = pstm.executeQuery();
-
-            if (rs.next())
-                System.out.println("login succeseffly");
-                //   "%d\t%s\t%f\t%d\n",
-            else System.out.println("try again");
-
-            //  int cnt= pstm.executeUpdate();
-            //  if (cnt!=0)
-            //    System.out.println("sesssion inserted successsfully!");
-        } catch (Exception ex) {
-            ex.printStackTrace();
 
 
-}}
 
 
-    @Override
-    public void buy() {
-
-    }
-
-  /*  @Override
-    public void cancelOreder(int ID) {
-
-    }*/
 }
 
 
