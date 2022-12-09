@@ -42,9 +42,9 @@ public class Book {
         return bookID;
     }
 
-  /*  public void setBookID(int bookID) {
+    public void setBookID(int bookID) {
         this.bookID = bookID;
-    }*/
+    }
 
     public int getQuantity() {
         return book_quant;
